@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Honours Research</title>
+        <!-- Tailwind CSS Play CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <!-- MathJax Configuration (Must come before the script tag) -->
+        <script>
+          window.MathJax = {
+            tex: {
+              inlineMath: [['$', '$'], ['\\(', '\\)']],
+              displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+          };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+    <!-- Shared Header/Navigation (Matches Home Page) -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <a href="home.html" class="text-lg font-bold text-slate-800">Adam Wong-Toi</a>
+            <ul class="flex gap-6 text-sm font-medium text-slate-600">
+                <li><a href="home.html" class="hover:text-blue-600">About Me</a></li>
+                <li><a href="honours.html" class="text-blue-600">Research</a></li>
+                <li><a href="home.html#teaching" class="hover:text-blue-600">Teaching</a></li>
+                <li><a href="home.html#projects" class="hover:text-blue-600">Projects</a></li>
+                <li class="opacity-40">CV (WIP)</li>
+            </ul>
+        </div>
+    </nav>
+
+ <!-- Main Article Layout -->
+    <main class="max-w-3xl mx-auto px-6 my-10">
+        
+        <!-- Back Button -->
+        <a href="home.html" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition mb-8 group">
+            <i class="fas fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i> Back to Home Page
+        </a>
+
+        <!-- Main Research Context -->
+        <article class="bg-white border border-slate-200 rounded-xl p-8 md:p-10 shadow-sm">
+            
+            <header class="border-b border-slate-100 pb-6 mb-8">
+                <span class="bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Honours Thesis</span>
+                <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mt-3 mb-4">
+                    Healing the History: A Robust Estimation Framework for Addressing Individual Misidentification in POPAN Capture-Recapture Models
+                </h1>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500">
+                    <div><i class="fas fa-user mr-1.5 text-slate-400"></i> Adam Wong-Toi (BSc Hons)</div>
+                    <div><i class="fas fa-chalkboard-teacher mr-1.5 text-slate-400"></i> Supervisor: Prof. Rachel Fewster</div>
+                    <div><i class="fas fa-university mr-1.5 text-slate-400"></i> Deptartment of Statistics, UoA</div>
+                </div>
+            </header>
+
+            <!-- 1. Background & What are Ghosts? -->
+            <section class="mb-10">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">1. The Problem: Citizen Science & "Ghost" Histories</h3>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    Following 20th-century commercial whaling, Southern Hemisphere humpback whale populations have experienced a rapid demographic recovery. Modern crowdsourced databases like 
+                    <a href="https://happywhale.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:text-blue-700 underline decoration-blue-200 hover:decoration-blue-600 transition-colors inline-flex items-center gap-1">
+                        Happywhale <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a> 
+                    aggregate millions of fluke photos matched using computer vision algorithms across decades, and many different marine species..
+                </p>
+                
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    However, automated matching is imperfect. When a photograph of a previously sighted individual fails to match its true profile, a <strong>misidentification error</strong> occurs. This error splits a true multi-sighting profile into two or more fragmented profiles, generating artificial single-sighting records known as <strong>"ghosts"</strong>.
+                </p>
+
+                <!-- Visual Example Box: What is a Ghost? -->
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 my-6">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Example: Ghost Generation</h4>
+                    
+                    <div class="space-y-4 text-xs md:text-sm font-mono">
+                        <!-- True History -->
+                        <div class="bg-white p-3 rounded border border-slate-200">
+                            <span class="text-emerald-700 font-bold font-sans block mb-1">True Individual Profile (Whale A):</span>
+                            <div class="text-slate-700">4 Year Encounter History: <span class="bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded font-bold">[ 1, 0, 1, 1 ]</span> (Sighted in Years 1, 3, and 4)</div>
+                        </div>
+
+                        <!-- Misidentified History (Ghosts) -->
+                        <div class="bg-white p-3 rounded border border-slate-200">
+                            <span class="text-rose-700 font-bold font-sans block mb-1">Observed History (Misidentification in Year 3):</span>
+                            <div class="space-y-1 text-slate-700">
+                                <div>Original Whale A: <span class="bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded">[ 1, 0, <strong class="text-rose-600">0</strong>, 1 ]</span> <span class="text-slate-400 font-sans text-xs">(Year 3 sighting dropped)</span></div>
+                                <div>"Ghost" Whale B: &nbsp;<span class="bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded font-bold">[ 0, 0, <strong class="text-rose-600">1</strong>, 0 ]</span> <span class="text-rose-600 font-sans text-xs">(Artificial singleton created!)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 font-sans">
+                        These artificial singletons severely inflate open-population capture-recapture abundance parameters because likelihood estimators interpret every ghost as an entirely new, unrepeatable member of the superpopulation.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. Simulation Studies & Quantifying Bias -->
+            <section class="mb-10">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">2. Simulation Studies & Bias Quantification</h3>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    To benchmark the impact of ghosts, simulation studies were constructed using parameters derived from <em>Happywhale</em> photo quality metrics (a baseline per-photo misidentification rate of $\approx 1.5\%$, translating to a pairwise error rate of $\sim 3\%$ for quality $3+$ images).
+                </p>
+
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 mb-4">
+                    <h4 class="font-semibold text-slate-800 text-sm mb-2">Key Simulation Findings across POPAN Formulations:</h4>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-slate-600">
+                        <li>
+                            <strong>Abundance Overestimation ($N^*$):</strong> In standard POPAN finite-mixture heterogeneity models (<code>Capmix</code>), uncorrected misidentification generated an artificial superpopulation inflation of <strong>$+7.2\%$</strong>.
+                        </li>
+                        <li>
+                            <strong>Parameter Resilience ($\phi, \lambda$):</strong> Interestingly, apparent survival ($\phi \approx 99\%$) and recruitment/growth ($\lambda \approx 10\%$) parameters remained robust to ghost contamination, as the overall geometric progression of cohort decay across years was preserved.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Recovering Within-Season Encounters via Saddlepoint Approximation -->
+            <section class="mb-10">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">3. Recovering Latent Sightings: The Saddlepoint Breakthrough</h3>
+                
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    To fix multi-year migration histories, we first needed to model how frequently whales are sighted <em>within</em> a single season. However, the observed encounter count ($Y$) is a corrupted version of the true latent frequency ($X$) due to singleton ghost encounters. Modeling this latent process requires evaluating zero-truncated compound likelihood distributions—a massive computational bottleneck on large datasets.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                    <!-- Problem Box -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                        <span class="text-xs font-bold text-rose-600 uppercase tracking-wider block mb-1">The Bottleneck</span>
+                        <h4 class="text-sm font-bold text-slate-800 mb-1">Prohibitive Computation</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Standard Monte Carlo integration or numerical convolutions become impossibly slow when fitting complex compound distributions across tens of thousands of Happywhale individual histories.
+                        </p>
+                    </div>
+
+                    <!-- Solution Box -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-1">The Solution</span>
+                        <h4 class="text-sm font-bold text-slate-800 mb-1">Saddlepoint Density Fitting</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            By approximating the likelihood directly through the cumulant generating function $K(s)$, saddlepoint methods evaluated exact parameter likelihoods in milliseconds rather than hours.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    Using this saddlepoint framework, we benchmarked four candidate distributions (Poisson, Negative Binomial, Geometric, and Discretised Log-Normal). 
+                </p>
+
+                <!-- Winner Callout Banner -->
+                <div class="bg-indigo-50/70 border border-indigo-200/80 rounded-lg p-4 text-xs md:text-sm text-slate-700 flex items-start gap-3">
+                    <i class="fas fa-trophy text-indigo-600 text-base mt-0.5 flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-indigo-950 font-semibold">Optimal Model: Discretised Log-Normal Distribution</strong>
+                        <p class="mt-0.5 text-slate-600 text-xs">
+                            The discretised log-normal distribution provided the best statistical fit for long-tailed citizen-science data—accurately capturing both single capture whales and heavily photo-documented resident individuals.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 4. The Two-Step Repairing Algorithm -->
+            <section class="mb-10">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">4. Developing the Algorithm: Vertical & Horizontal Repairing</h3>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    Once the latent encounter parameters were established, we implemented a structured two-stage <strong>stochastic reallocation ("healing") algorithm</strong> to restructure the history matrix:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                    <!-- Step 1: Vertical Thinning -->
+                    <div class="border border-slate-200 rounded-lg p-5 bg-slate-50">
+                        <div class="flex items-center gap-2 text-blue-700 font-bold text-sm mb-2">
+                            <i class="fas fa-arrows-alt-v"></i> Stage 1: Vertical Thinning
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <strong>Objective: Remove surplus ghosts within each primary occasion.</strong><br><br>
+                            Using a system of simultaneous equations driven by the saddlepoint-fitted encounter distribution, surplus single-sighting histories are identified annually and "thinned" out, restoring the true annual sample totals ($n_t$) across the time series.
+                        </p>
+                    </div>
+
+                    <!-- Step 2: Horizontal Reallocation -->
+                    <div class="border border-slate-200 rounded-lg p-5 bg-slate-50">
+                        <div class="flex items-center gap-2 text-teal-700 font-bold text-sm mb-2">
+                            <i class="fas fa-arrows-alt-h"></i> Stage 2: Horizontal Reallocation
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                            <strong>Objective: Re-attach orphaned sightings across time.</strong><br><br>
+                            Leftover "orphaned ghosts" still remain after stage 1 Vertical thinning has occurd. Individuals that have all their captures misidentified leave orphaned ghosts. Instead, joint likelihood weights are calculated across candidate multi-year individual histories, stochastically reallocating orphaned sightings back into existing true profiles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Simulation Result Comparison Card -->
+                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-5 text-center">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1">Framework Performance</span>
+                    <div class="text-2xl font-extrabold text-emerald-900">
+                        Bias Reduced from <span class="text-rose-600 line-through">+7.2%</span> to <span class="text-emerald-600">+0.05%</span>
+                    </div>
+                    <p class="text-xs text-emerald-700 mt-2">
+                        Benchmark testing on simulated multi-decade populations restored superpopulation ($N^*$) estimation to near-perfect accuracy without dropping valid observation data.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5. Real-World Findings -->
+            <section class="mb-8">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">5. Application: Eastern Australian Humpback Whales</h3>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    The healed <code>Capmix</code> framework was applied to a 41-year longitudinal dataset (1984–2024) from Happywhale containing <strong>15,792 individual fluke histories</strong>.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+                    <div class="border border-slate-200 rounded-lg p-4 text-center bg-white shadow-xs">
+                        <div class="text-2xl font-bold text-blue-600">63,584</div>
+                        <div class="text-xs text-slate-500 font-medium mt-1">2024 Abundance ($N_{2024}$)</div>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-4 text-center bg-white shadow-xs">
+                        <div class="text-2xl font-bold text-teal-600">10% p.a.</div>
+                        <div class="text-xs text-slate-500 font-medium mt-1">Growth Rate ($\lambda$)</div>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-4 text-center bg-white shadow-xs">
+                        <div class="text-2xl font-bold text-indigo-600">~99%</div>
+                        <div class="text-xs text-slate-500 font-medium mt-1">Apparent Survival ($\phi$)</div>
+                    </div>
+                </div>
+
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    These empirical results align closely with shore-based visual point censuses (e.g., Noad et al., 2020), validating that citizen-science photo-ID pipelines, when properly corrected for ghost bias, can replace or complement expensive traditional land-based counts.
+                </p>
+            </section>
+
+            <!-- Key Impact -->
+            <div class="border-t border-slate-100 pt-6">
+                <h4 class="text-sm font-semibold text-slate-900 mb-2">Thesis Takeaway</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Through the stochastic reallocation process, misidentification bias in photo-ID datasets can be accounted for and corrected. A two-stage process that repairs yearly counts and individual life histories to statistically and biologically plauasible outcomes, repairs the data to mitigate the bias from the misidentification. 
+                </p>
+            </div>
+
+        </article>
+    </main>
+
+    </body>
+</html>
