@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Adam Wong-Toi</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+    <!-- Shared Header/Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="text-lg font-bold text-slate-800">Adam Wong-Toi</a>
+            <ul class="flex gap-6 text-sm font-medium text-slate-600">
+                <li><a href="index.html" class="hover:text-blue-600">About Me</a></li>
+                <li><a href="honours.html" class="hover:text-blue-600">Research</a></li>
+                <li><a href="index.html#teaching" class="hover:text-blue-600">Teaching</a></li>
+                <li><a href="projects.html" class="text-blue-600">Projects</a></li>
+                <li class="opacity-40">CV (WIP)</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Layout -->
+    <main class="max-w-5xl mx-auto px-6 my-10">
+        
+        <!-- Back Button -->
+        <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition mb-8 group">
+            <i class="fas fa-arrow-left text-xs transition-transform group-hover:-translate-x-1"></i> Back to Home Page
+        </a>
+
+        <!-- Page Header -->
+        <header class="mb-10">
+            <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-2">Projects & Technical Work</h1>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                A showcase of statistical software development, interactive web applications, applied research, and data visualization.
+            </p>
+        </header>
+
+        <!-- Projects Sections Grid -->
+        <div class="space-y-12">
+
+            <!-- Category 1: Software & Interactive Dashboards (Blue Accent) -->
+            <section>
+                <div class="flex items-center gap-2 pb-3 mb-6 border-b border-blue-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                    <h2 class="text-lg font-bold text-slate-900">Software & Interactive Dashboards</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- RTMB R Package -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-blue-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+                                    R Package
+                                </span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">RTMB R Package for POPAN Models</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Authoring an R package to translate existing POPAN capture-recapture routines into RTMB-compatible computational workflows for efficient estimation.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">R Package Dev</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">RTMB</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Capture-Recapture</span>
+                        </div>
+                    </article>
+
+                    <!-- NZ Electorate Data Shiny App -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-blue-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+                                    Web Application
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Interactive</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">NZ Electorate Data Explorer</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                An interactive Shiny application designed to visualize and explore demographic, spatial, and electoral data across New Zealand voting districts.
+                            </p>
+                            <a href="https://adamwong-toi-nz-electorate-explorer.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-800 transition">
+                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                <span>Launch Live Application</span>
+                            </a>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">R Shiny</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">ggplot2</span>
+                        </div>
+                    </article>
+
+                    <!-- MyTuition Shiny App -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-blue-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+                                    Industry Tool
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">MyTuition</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Tutor & Student Analytics Dashboard</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Developed an interactive Shiny application featuring dynamic summary tables and custom dashboards to streamline core tutor and student data management via SQL.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">R Shiny</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">SQL</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Data Visualisation</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Category 2: Statistical Research & Modeling -->
+            <section>
+                <div class="flex items-center gap-2 pb-3 mb-6 border-b border-purple-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+                    <h2 class="text-lg font-bold text-slate-900">Statistical Research & Modeling</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- STATS 770 Medical Stats -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-purple-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">
+                                    Self-Directed Research
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">STATS 770</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Medical Statistics Analysis</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Scoped, designed, and authored an independent statistical research report analyzing the impact of depression scores on all-cause mortality using NHANES 2015/16 data.
+                            </p>
+                            <a href="https://github.com/adamwong-toi/personal-website/blob/main/reports/medical_stats_depression_report_AWT2026.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition">
+                                <i class="fab fa-github text-[12px]"></i>
+                                <span>View Repository</span>
+                            </a>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Medical Statistics</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Survival Analysis</span>
+                        </div>
+                    </article>
+
+                    <!-- GUiNZ Cohort -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-purple-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200">
+                                    Longitudinal Study
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">GUiNZ Cohort</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Classifying Predictors of Youth Depression</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Evaluated developmental risk and protective factors for adolescent depression using multi-wave cohort data from Growing Up in NZ. Implemented LMMs and GLMMs to capture intra-individual trajectories over time.
+                            </p>
+                            <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 select-none">
+                                <i class="fas fa-lock text-[10px]"></i>
+                                <span>Data & Repository Confidential</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Mixed Models</span>
+                            <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Longitudinal Analysis</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Category 3: Educational Data Science & Evaluation (Emerald Accent) -->
+            <section>
+                <div class="flex items-center gap-2 pb-3 mb-6 border-b border-emerald-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+                    <h2 class="text-lg font-bold text-slate-900">Educational Data Science & Evaluation</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- STATS 787 Data Viz -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-emerald-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <!-- Top Content Group -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                    Data Visualization
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">STATS 787</span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">Music History Visualisation</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Applied data visualization techniques aligned with Human Visual System principles to analyse 11 years of personal music listening history from Spotify.
+                            </p>
+                        </div>
+                    
+                        <!-- Bottom Content Group (Pushed down evenly) -->
+                        <div>
+                            <a href="reports/spotify_dataviz_report_AWT2026.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 hover:text-emerald-800 transition">
+                                <i class="fab fa-github text-[12px]"></i>
+                                <span>View Repository</span>
+                            </a>
+                            
+                            <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                                <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">R</span>
+                                <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">ggplot2</span>
+                                <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">.json</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- LLM Post Classification -->
+                    <article class="bg-white rounded-xl border-l-4 border-l-emerald-600 border-y border-r border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-300 transition">
+                        <!-- Top Content Group -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                    Educational DS
+                                </span>
+                            </div>
+                            <h3 class="text-base font-bold text-slate-900 mb-2">LLM Post Classification in Statistics</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                Supervised by Dr. Anna Fergusson; analyzed LLM accuracy in classifying student forum discussions using retrospective data and categorical rubrics.
+                            </p>
+                        </div>
+                    
+                        <!-- Bottom Content Group (Pushed down evenly) -->
+                        <div>
+                            <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 select-none">
+                                <i class="fas fa-lock text-[10px]"></i>
+                                <span>Data & Repository Confidential</span>
+                            </div>
+                            
+                            <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                                <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">LLMs</span>
+                                <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Text Classification</span>
+                                <span class="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Rubric Development</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
