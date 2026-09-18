@@ -3,12 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="google-site-verification" content="MgV03P1PIb0Kvsex835I4HOa7bAt5Q7Y8UbSJe5FnL4" />
+    <meta name="google-site-verification" content="MgV03P1PIb0Kvsex835I4HOa7bAt5Q7Y8UbSJe5FnL4" />
     <title>Adam Wong-Toi | Ecological Statistician</title>
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      /* Base pill badge styling */
+      .course-badge {
+        position: relative;
+        display: inline-block;
+        cursor: default;
+        background-color: #f1f5f9; /* bg-slate-100 */
+        color: #334155; /* text-slate-700 */
+        font-family: monospace;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        border: 1px solid #e2e8f0; /* border-slate-200 */
+        transition: background-color 150ms ease;
+      }
+
+      .course-badge:hover {
+        background-color: #e2e8f0; /* hover:bg-slate-200 */
+      }
+
+      /* Tooltip text box styling (sibling element inside .group) */
+      .group:hover .tooltip {
+        opacity: 1;
+      }
+      
+      .tooltip {
+        opacity: 0;
+        transition: opacity 100ms ease;
+        pointer-events: none;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 6px;
+        white-space: nowrap;
+        background-color: #0f172a; /* bg-slate-900 */
+        color: #ffffff;
+        font-size: 11px;
+        font-family: sans-serif;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 30;
+      }
+    </style>
 </head>
+
+
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
     <!-- Shared Header/Navigation -->
@@ -28,19 +77,21 @@
     <!-- Main Content Container -->
     <main class="max-w-4xl mx-auto px-6 my-12 flex flex-col gap-10">
         
-        <!-- Profile Hero Section -->
+        <!-- Profile Section -->
         <section class="bg-white border border-slate-200 rounded-xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-xs">
             <img src="headshot_awt_032023.jpg" alt="Adam Wong-Toi Profile Photo" class="w-40 h-40 md:w-44 md:h-44 rounded-full object-cover border-2 border-slate-100 shadow-sm flex-shrink-0">
             <div>
                 <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-1">Adam Wong-Toi</h1>
                 <p class="text-blue-600 font-semibold mb-3">Ecological Statistician</p>
                 
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-3">
-                    Kia ora, welcome to my personal page! I am an ecological statistician and researcher at Waipapa Taumata Rau | The University of Auckland, specialising in developing robust statistical frameworks for population estimation in POPAN capture-recapture models. Under the supervision of Professor Rachel Fewster, my current research focuses on population estimation of blue whales.
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-3 text-justify">
+                    Kia ora, welcome to my personal page! I am an ecological statistician and researcher at Waipapa Taumata Rau | The University of Auckland, specialising in developing robust statistical frameworks for population estimation in POPAN capture-recapture models. 
+                    Under the supervision of Professor Rachel Fewster, my current research focuses on population estimation of blue whales and development of RTMB/Automatic Differentiation optimised codebases.
                 </p>
                 
-                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
-                    In early 2027, I will commence my PhD, expanding my research into the genetics of invasive predators. This will focus on developing statistical tools and tests to directly support biosecurity and conservation management efforts across Aotearoa New Zealand.
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base text-justify">
+                    In early 2027, I will commence my PhD, expanding my research into the genetics of invasive predator species. 
+                    This will focus on developing field-researcher friendly statistical tools and tests to directly support biosecurity and conservation management efforts across Aotearoa New Zealand, contibuting towards <em>Predator Free 2050</em> goals.
                 </p>
             </div>
         </section>
@@ -54,14 +105,15 @@
             
             <h2 class="text-xl font-bold text-slate-900 mb-3">Addressing Individual Misidentification in POPAN Capture-Recapture Models</h2>
             
-            <div class="text-slate-600 text-sm md:text-base leading-relaxed space-y-3 mb-6">
+            <div class="text-slate-600 text-sm md:text-base leading-relaxed space-y-3 mb-6 text-justify">
                 <p>
-                    Photo-identification data is frequently vulnerable to individual misidentification, which creates artificial "ghost" signatures that systematically bias demographic trends. Using multi-decade eastern Australian humpback whale datasets sourced from <em>Happywhale.com</em>, this research developed a novel stochastic reallocation algorithm designed to repair corrupted capture histories.
+                    Photo-identification data is frequently vulnerable to individual misidentification, which creates artificial "ghost" signatures that systematically bias demographic trends. 
+                    Using multi-decade eastern Australian humpback whale datasets sourced from <em>Happywhale.com</em>, this research developed a novel stochastic reallocation algorithm designed to repair corrupted capture histories.
                 </p>
                 <div class="flex flex-wrap gap-2 pt-1">
                     <span class="bg-slate-100 text-slate-700 text-xs font-medium px-2.5 py-1 rounded-md border border-slate-200">Capture-Recapture Modelling</span>
-                    <span class="bg-slate-100 text-slate-700 text-xs font-medium px-2.5 py-1 rounded-md border border-slate-200">Simulation Studies</span>
                     <span class="bg-slate-100 text-slate-700 text-xs font-medium px-2.5 py-1 rounded-md border border-slate-200">Saddlepoint Approximation</span>
+                    <span class="bg-slate-100 text-slate-700 text-xs font-medium px-2.5 py-1 rounded-md border border-slate-200">Simulation Studies</span>
                     <span class="bg-slate-100 text-slate-700 text-xs font-medium px-2.5 py-1 rounded-md border border-slate-200">Citizen Science Data</span>
                 </div>
             </div>
@@ -71,91 +123,166 @@
             </a>
         </section>
         
-        
         <!-- Teaching Experience -->
         <section id="teaching" class="bg-white border border-slate-200 rounded-xl p-8 shadow-xs">
-            <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center">
-                <i class="fas fa-graduation-cap text-blue-600 mr-2.5"></i>Teaching Experience
-            </h2>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
+                <h2 class="text-lg font-bold text-slate-900 flex items-center">
+                    <i class="fas fa-graduation-cap text-blue-600 mr-2.5"></i>Teaching Experience
+                </h2>
+                
+                <a href="https://study.auckland.ac.nz/ords/r/uoa/catalogue/plan?p7_code=STAT-BSc" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="text-xs text-slate-500 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                    <span>Course Catalogue</span>
+                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                </a>
+            </div>
             
             <div class="space-y-8 text-sm">
+                
                 <!-- Current Appointments -->
                 <div>
-                    <h3 class="font-bold text-blue-600 uppercase tracking-wider text-sm border-b border-slate-100 pb-2 mb-4">
+                    <h3 class="font-bold text-blue-600 uppercase tracking-wider text-xs border-b border-slate-100 pb-2 mb-4">
                         Current Appointments (2026 Semester 2)
                     </h3>
                     
-                    <div class="space-y-3 text-slate-600">
-                        <p class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>Tutorial Demonstrator, Marking & Interactive Oral Assessments:</strong> <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 150</span></span>
-                        </p>
-                        
-                        <p class="flex items-start gap-2 flex-wrap">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>Assistance Hub:</strong></span>
-                            <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 150</span>
-                            <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 240</span>
-                            <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 330</span>
-                            <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 331</span>
-                        </p>
-                        
-                        <p class="flex items-start gap-2 flex-wrap">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>Marking:</strong></span>
-                            <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 240</span>
-                            <span class="bg-slate-100 text-slate-700 font-mono text-xs px-2 py-0.5 rounded border border-slate-200">STATS 399</span>
-                        </p>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-center">
+                            <div class="font-semibold text-slate-900 md:col-span-1">Tutorial Demonstrator & Oral Assessments</div>
+                            <div class="md:col-span-3">
+                                <div class="group inline-block relative">
+                                    <span class="course-badge">STATS 150</span>
+                                    <span class="tooltip">Communicating Statistics</span>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-center">
+                            <div class="font-semibold text-slate-900 md:col-span-1">Assistance Hub</div>
+                            <div class="md:col-span-3 flex flex-wrap gap-1">
+                                <div class="group inline-block relative"><span class="course-badge">STATS 150</span><span class="tooltip">Communicating Statistics</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 240</span><span class="tooltip">Design and Structured Data</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 330</span><span class="tooltip">Statistical Modelling</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 331</span><span class="tooltip">Introduction to Bayesian Statistics</span></div>
+                            </div>
+                        </div>
+        
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-center">
+                            <div class="font-semibold text-slate-900 md:col-span-1">Marking</div>
+                            <div class="md:col-span-3 flex flex-wrap gap-1">
+                                <div class="group inline-block relative"><span class="course-badge">STATS 240</span><span class="tooltip">Design and Structured Data</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 399</span><span class="tooltip">Capstone: Statistics in Action</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- GTA Work -->
+        
+                <!-- Graduate Teaching Assistant -->
                 <div>
-                    <h3 class="font-bold text-blue-600 uppercase tracking-wider text-sm border-b border-slate-100 pb-2 mb-4">
-                        Previous Graduate Teaching Assistant (GTA) Work
+                    <h3 class="font-bold text-blue-600 uppercase tracking-wider text-xs border-b border-slate-100 pb-2 mb-4">
+                        Graduate Teaching Assistant (GTA)
                     </h3>
                     
-                    <div class="space-y-3 text-slate-600">
-                        <p class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>2026 Semester 1:</strong> Tutorial/Lab Demonstrator and Marking (STATS 326/786); Assistance Hub (STATS 302, STATS 320, STATS 326); Interactive Oral Assessments (BIOSCI 738)</span>
-                        </p>
-                        <p class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>2026 Summer School:</strong> Assistance Hub (STATS 201/208, STATS 330); Marking (STATS 330)</span>
-                        </p>
-                        <p class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>2025 Semester 2:</strong> Tutorial Demonstrator (STATS 150); Assistance Hub (STATS 125, STATS 150, STATS 240, STATS 331)</span>
-                        </p>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-start">
+                            <div class="font-semibold text-slate-900 md:col-span-1">2026 Semester 1</div>
+                            <div class="text-slate-600 md:col-span-3 space-y-2">
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Tutorial/Lab Demonstrator & Marking:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 326 / 786</span><span class="tooltip">Applied Time Series Analysis</span></div>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Assistance Hub:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 302</span><span class="tooltip">Applied Multivariate Analysis</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 320</span><span class="tooltip">Applied Stochastic Modelling</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 326</span><span class="tooltip">Applied Time Series Analysis</span></div>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Interactive Oral Assessments:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">BIOSCI 738</span><span class="tooltip">Data Analysis for Biologists</span></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-start">
+                            <div class="font-semibold text-slate-900 md:col-span-1">2026 Summer Semester</div>
+                            <div class="text-slate-600 md:col-span-3 space-y-2">
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Assistance Hub:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 201 / 208</span><span class="tooltip">Data Analysis</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 330</span><span class="tooltip">Statistical Modelling</span></div>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Marking:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 330</span><span class="tooltip">Statistical Modelling</span></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-start">
+                            <div class="font-semibold text-slate-900 md:col-span-1">2025 Semester 2</div>
+                            <div class="text-slate-600 md:col-span-3 space-y-2">
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Tutorial Demonstrator:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 150</span><span class="tooltip">Communicating Statistics</span></div>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Assistance Hub:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 125</span><span class="tooltip">Probability and its Applications</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 150</span><span class="tooltip">Communicating Statistics</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 240</span><span class="tooltip">Design and Structured Data</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 331</span><span class="tooltip">Introduction to Bayesian Statistics</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- TA Work -->
+        
+                <!-- Teaching Assistant -->
                 <div>
-                    <h3 class="font-bold text-blue-600 uppercase tracking-wider text-sm border-b border-slate-100 pb-2 mb-4">
-                        Previous Teaching Assistant (TA) Work
+                    <h3 class="font-bold text-blue-600 uppercase tracking-wider text-xs border-b border-slate-100 pb-2 mb-4">
+                        Teaching Assistant (TA)
                     </h3>
                     
-                    <div class="space-y-3 text-slate-600">
-                        <p class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>2025 Semester 2:</strong> Assistance Hub (STATS 125, STATS 320, STATS 326); Marking (STATS 240)</span>
-                        </p>
-                        <p class="flex items-start gap-2">
-                            <span class="text-blue-500 font-bold">•</span>
-                            <span><strong>2023 – 2025 (Semester 1):</strong> Marking (STATS 91F TFC, STATS 101/108, STATS 210, STATS 320, STATS 326, STATS 786)</span>
-                        </p>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-start">
+                            <div class="font-semibold text-slate-900 md:col-span-1">2025 Semester 2</div>
+                            <div class="text-slate-600 md:col-span-3 space-y-2">
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Assistance Hub:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 125</span><span class="tooltip">Probability and its Applications</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 320</span><span class="tooltip">Applied Stochastic Modelling</span></div>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 326</span><span class="tooltip">Applied Time Series Analysis</span></div>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1">
+                                    <strong class="text-slate-800 mr-1">Marking:</strong>
+                                    <div class="group inline-block relative"><span class="course-badge">STATS 240</span><span class="tooltip">Design and Structured Data</span></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4 items-start">
+                            <div class="font-semibold text-slate-900 md:col-span-1">2023 – 2025 Semester 1</div>
+                            <div class="text-slate-600 md:col-span-3 flex flex-wrap items-center gap-1">
+                                <strong class="text-slate-800 mr-1">Marking:</strong>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 91F TFC</span><span class="tooltip">Foundation Statistics</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 101 / 108</span><span class="tooltip">Introduction to Statistics</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 210</span><span class="tooltip">Statistical Theory</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 320</span><span class="tooltip">Applied Stochastic Modelling</span></div>
+                                <div class="group inline-block relative"><span class="course-badge">STATS 326 / 786</span><span class="tooltip">Applied Time Series Analysis</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+        
             </div>
         </section>
+
         
-        
-        <!-- Technical Skills & Platforms -->
+        <!-- Technical Skills -->
         <section class="bg-white border border-slate-200 rounded-xl p-8 shadow-xs">
             <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center">
-                <i class="fas fa-tools text-blue-600 mr-2.5"></i>Technical Skills & Platforms
+                <i class="fas fa-tools text-blue-600 mr-2.5"></i> Technical Skills
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
@@ -168,11 +295,11 @@
                     <ul class="text-slate-600 space-y-2.5">
                         <li class="flex items-center gap-2.5">
                             <i class="fab fa-r-project text-blue-500 w-4 text-center"></i>
-                            <span><strong>R Language:</strong> Core statistical programming & graphics</span>
+                            <span><strong>R Language</strong>: R Programming, Tidyverse, RTMB</span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <i class="fas fa-database text-slate-500 w-4 text-center"></i>
-                            <span><strong>SQL:</strong> Relational queries & data extraction</span>
+                            <span><strong>SQL:</strong> Database queries & data extraction</span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <i class="fas fa-file-excel text-emerald-600 w-4 text-center"></i>
@@ -189,19 +316,23 @@
                     <ul class="text-slate-600 space-y-2.5">
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 font-bold">•</span>
-                            <span><strong>Statistical Modeling:</strong> GLMs & Bayesian methods</span>
+                            <span><strong>Modelling:</strong> GLMs, Bayesian Analysis</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 font-bold">•</span>
-                            <span><strong>Multivariate Methods:</strong> Structural analysis</span>
+                            <span><strong>Capture-Recapture:</strong> POPAN Jolly-Seber mark-recapture</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 font-bold">•</span>
-                            <span><strong>Time Series & Longitudinal:</strong> Survival & mixed models</span>
+                            <span><strong>Multivariate Methods:</strong> PCA, LDA, PLS, Clustering</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 font-bold">•</span>
-                            <span><strong>Stochastic Processes:</strong> Markov chains & stochastics</span>
+                            <span><strong>Time Series Models</strong> ETS & ARIMA Models, Forecasting</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-500 font-bold">•</span>
+                            <span><strong>Longitudal Analysis:</strong> Survival Analysis & Mixed Models</span>
                         </li>
                     </ul>
                 </div>
@@ -209,232 +340,47 @@
                 <!-- Document Design & Reporting -->
                 <div class="space-y-3">
                     <h3 class="font-bold text-emerald-600 uppercase tracking-wider text-xs border-b border-slate-100 pb-2">
-                        <i class="fas fa-file-alt mr-1"></i> Reporting & Typesetting
+                        <i class="fas fa-file-alt mr-1"></i> Reporting
                     </h3>
                     <ul class="text-slate-600 space-y-2.5">
                         <li class="flex items-center gap-2.5">
                             <i class="fab fa-markdown text-blue-400 w-4 text-center"></i>
-                            <span><strong>R Markdown:</strong> Dynamic reporting</span>
+                            <span><strong>R Markdown</strong> </span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <i class="fas fa-chart-bar text-emerald-500 w-4 text-center"></i>
-                            <span><strong>ggplot2:</strong> Programmatic visualization</span>
+                            <span><strong>ggplot2</strong> </span>
+                        </li>
+                            <li class="flex items-center gap-2.5">
+                            <i class="fas fa-window-restore text-purple-500 w-4 text-center"></i>
+                            <span><strong>R Shiny</strong> </span>
                         </li>
                         <li class="flex items-center gap-2.5">
                             <i class="fas fa-square-root-variable text-purple-500 w-4 text-center"></i>
-                            <span><strong>LaTeX:</strong> Mathematical typesetting</span>
+                            <span><strong>LaTeX</strong> </span>
                         </li>
+
                     </ul>
                 </div>
                 
             </div>
         </section>
 
-        <!-- Technical Projects & Research Section -->
-        <section id="projects" class="bg-white rounded-xl border border-slate-200 p-8 shadow-xs">
-            
-            <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+
+        <!-- Projects Navigation Banner -->
+        <section id="projects" class="bg-white rounded-xl border border-slate-200 p-8 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
                 <h2 class="text-lg font-bold text-slate-900 flex items-center">
                     <i class="fas fa-code text-blue-600 mr-2.5"></i>Projects & Research
                 </h2>
-                <span class="text-xs text-slate-400 font-mono hidden sm:inline">
-                    Scroll horizontal &rarr;
-                </span>
+                <p class="text-sm text-slate-600 mt-1">
+                    Explore computational tools, statistical research, and interactive data visualization projects.
+                </p>
             </div>
-            
-            <div class="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scroll-smooth [scrollbar-width:thin]">
-                
-                <!-- Project Card: R Package -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-100/80 px-2.5 py-1 rounded-full">
-                                Software Development
-                            </span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            RTMB R Package for POPAN Models
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Authoring an R package to translate existing POPAN capture-recapture routines into RTMB-compatible computational workflows for efficient estimation.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">R Package Dev</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">RTMB</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Capture-Recapture</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Card: LLMs -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 px-2.5 py-1 rounded-full">
-                                Educational Data Science
-                            </span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            LLM Post Classification in Statistics
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Supervised by Dr. Anna Fergusson; analyzed LLM accuracy in classifying student forum discussions using retrospective data and categorical rubrics.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">LLMs</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Text Classification</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Rubric Analysis</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Card: STATS 770 -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-100/80 px-2.5 py-1 rounded-full">
-                                Self-Directed Research
-                            </span>
-                            <span class="text-xs text-slate-500 font-mono">STATS 770</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            Medical Statistics Analysis
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Scoped, designed, and authored an independent statistical research report. Analysed the impact of various depression scores on all-cause mortality from NHANES 2015/16 data.
-                        </p>
-                    </div>
-                    
-                    <a href="https://github.com/adamwong-toi" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1.5 shrink-0 pb-0.5 transition">
-                        <span>Click here for more info (under construction!)</span>
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                    
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Medical Statistics</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Survival Analysis</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Causal Modelling</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card: STATS 787 -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 px-2.5 py-1 rounded-full">
-                                Statistical Computing
-                            </span>
-                            <span class="text-xs text-slate-500 font-mono">STATS 787</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            Data Visualisation Project
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Applied data visualisation techniques aligned with the Human Visual System principles to analyze 11 years of personal music listening history from Spotify.
-                        </p>
-                    </div>
-                    
-                    <a href="https://github.com/adamwong-toi" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1.5 shrink-0 pb-0.5 transition">
-                        <span>Click here for more info (under construction!)</span>
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">R</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">gglot2</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Data Visualization</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card: MyTuition Shiny App -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-1 rounded-full">
-                                Industry
-                            </span>
-                            <span class="text-xs text-slate-500 font-mono">MyTuition</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            Tutor & Student Analytics Dashboard
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Developed an interactive Shiny application featuring dynamic summary tables and custom dashboards to streamline core tutor and student data management via SQL.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">R Shiny</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">SQL</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Data Viz</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Card: GUiNZ -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-700 bg-indigo-100/80 px-2.5 py-1 rounded-full">
-                                Longitudinal Study
-                            </span>
-                            <span class="text-xs text-slate-500 font-mono">GUiNZ Cohort</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            Classifying Predictors of Youth Depression
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Evaluated developmental risk and protective factors for adolescent depression using multi-wave cohort data from Growing Up in NZ. Implemented LMMs and GLMMs to capture intra-individual trajectories over time.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Mixed Models</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Longitudinal Analysis</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">R (lme4)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Card: Interactive Oral Assessments Evaluation -->
-                <div class="flex-none w-80 sm:w-96 snap-center bg-slate-50/80 rounded-lg p-5 border border-slate-200 flex flex-col justify-between min-h-[260px]">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold uppercase tracking-wider text-blue-800 bg-blue-100 px-2.5 py-1 rounded-full">
-                                Academic Research
-                            </span>
-                            <span class="text-xs text-slate-500 font-mono">BIOSCI 738</span>
-                        </div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">
-                            Evaluation of Interactive Oral Assessments
-                        </h3>
-                        <p class="text-sm text-slate-600">
-                            Evaluated interactive coding assessments under the supervision of Dr. Charlotte Jones-Todd, involving code transcription and thematic analysis of postgraduate student responses for BIOSCI 738.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-slate-200/80">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Thematic Analysis</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Qualitative Research</span>
-                            <span class="text-xs font-medium bg-white text-slate-700 px-2 py-0.5 rounded border border-slate-200">Transcription</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <a href="projects.html" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition shrink-0">
+                <span>View All Projects</span>
+                <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
         </section>
 
         <!-- Get In Touch / Contact Section -->
@@ -468,7 +414,7 @@
         <footer class="mt-4 py-6 border-t border-slate-200 text-center text-sm text-slate-500">
             <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
                 <p> <span id="year"></span> - Adam Wong-Toi</p>
-                <p class="text-xs text-slate-400">Designed & Developed with Tailwind CSS</p>
+                <p class="text-xs text-slate-400">Designed & Developed with Tailwind CSS & Google Gemini</p>
             </div>
         </footer>
 
